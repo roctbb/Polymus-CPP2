@@ -17,9 +17,6 @@ public:
         name = userName;
         overdraft = userOverdraft;
         balance = userBalance;
-        string filename = to_string(userId)+".txt";
-        ifstream fin(filename);
-
     }
     ~Account() {
     }
