@@ -42,7 +42,7 @@ Vector max(Vector v1, Vector v2) // возвращаем вектор, у кот
 
 int main()
 {
-	cout << "Enter coords (x1, y1, x2, y2) for 3 vectors" << endl;
+	cout << "Enter coords (x1, y1, x2, y2) for 2 vectors" << endl;
 	Vector v1, v2(); // эти записи равнозначны; вызывается конструктор Vector()
 	Vector v3(1, 1, 1, 1); // вызывается конструктор Vector(int, int, int, int)
 	/* 
