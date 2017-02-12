@@ -7,4 +7,4 @@
 
 ## Пример работы
 
-![example.jpg](https://github.com/roctbb/Polymus-CPP2/raw/master/Homework/Tamagochi/UML.png)
+![example.jpg](example.jpg)
