@@ -67,3 +67,13 @@ int main() {
 * 
 * * 
 ```
+## Стэк
+```cpp
+int main() {
+    Stack <int> stack;
+    for (int i=0; i<5; i++)
+        stack.push(i);
+    while(!stack.isEmpty())
+        cout<<stack.pop()<<" "; // 4 3 2 1 0 
+}
+```
