@@ -77,7 +77,7 @@ int main() {
     f2.print();  // 2/3
 
     Fraction f3 = Fraction::sum(f1, f2);
-    Fraction f4 = Fraction::multuply(f1, f2);
+    Fraction f4 = Fraction::multiply(f1, f2);
 
     f3.print(); // 7/6
     f4.print();  // 1/3
