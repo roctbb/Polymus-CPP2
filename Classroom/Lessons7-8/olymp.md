@@ -1,4 +1,4 @@
-## Прямая
+### Прямая
 ```cpp
 int main() {
     Line A (3,4);
@@ -11,7 +11,7 @@ int main() {
     return 0;
 }
 ```
-## Вектор
+### Вектор
 ```cpp
 int main() {
     Vector2d A(2,3);
@@ -27,7 +27,7 @@ int main() {
     return 0;
 }
 ```
-## Кошкин дом
+### Кошкин дом
 ```cpp
 int main() {
     Cat Masha;
@@ -40,7 +40,7 @@ int main() {
     Bobik.say(); // bark bark
 }
 ```
-## Художник
+### Художник
 ```cpp
 class Figure;
 class Stairs;
@@ -67,7 +67,7 @@ int main() {
 * 
 * * 
 ```
-## Дроби
+### Дроби
 ```cpp
 int main() {
     Fraction f1(3, 6);
@@ -83,7 +83,7 @@ int main() {
     f4.print();  // 1/3
 }
 ```
-## Стэк
+### Стэк
 ```cpp
 int main() {
     Stack <int> stack;
