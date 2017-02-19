@@ -67,6 +67,22 @@ int main() {
 * 
 * * 
 ```
+## Дроби
+```cpp
+int main() {
+    Fraction f1(3, 6);
+    Fraction f2(2, 3);
+
+    f1.print(); // 1/2
+    f2.print();  // 2/3
+
+    Fraction f3 = Fraction::sum(f1, f2);
+    Fraction f4 = Fraction::multuply(f1, f2);
+
+    f3.print(); // 7/6
+    f4.print();  // 1/3
+}
+```
 ## Стэк
 ```cpp
 int main() {
@@ -77,3 +93,4 @@ int main() {
         cout<<stack.pop()<<" "; // 4 3 2 1 0 
 }
 ```
+
