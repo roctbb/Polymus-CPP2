@@ -16,3 +16,11 @@ public:
 };
 ```
 
+Для соединения объектов между собой требуется использовать функцию  QObject::connect(отправитель, сигнал, приемник, слот);
+
+Например:
+```cpp
+    connect(ui->pushButton, SIGNAL(clicked(bool)),this,  SLOT(inc()) );
+
+```
+
