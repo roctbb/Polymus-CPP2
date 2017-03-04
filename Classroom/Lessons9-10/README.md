@@ -23,4 +23,19 @@ public:
     connect(ui->pushButton, SIGNAL(clicked(bool)),this,  SLOT(inc()) );
 
 ```
+## Пример main.cpp
 
+```cpp
+#include "mainwindow.h" // подключенние заголовочного файла главного окна(формы)
+#include <QApplication> // подключение заголовочного файла стандартного QT приложения
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv); //создание объекта прилождения QT
+    MainWindow w; // создание объекта главного окна
+    w.show(); // вызов стандартного для QWidget метода show(), показывающего объект
+
+    return a.exec();
+}
+
+```
