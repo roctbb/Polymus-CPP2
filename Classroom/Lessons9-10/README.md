@@ -40,6 +40,8 @@ int main(int argc, char *argv[])
 ```
 ## Работа с таймером
 Чтобы работать с таймером в QT необходимо подключить заголовочный файл QTimer (#include <QTimer>).
+
+### Файл mainwindow.h
 ```cpp
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
@@ -59,12 +61,44 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 public slots:
-    void inc();
+    void inc(); // Наш слот
 private:
     int n;
-    QTimer *timer;
+    QTimer *timer; // создание указателя на наш таймер
     Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H
 ```
+### Файл mainwindow.cpp
+
+```cpp
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+    n = 0;
+    timer = new QTimer; // создание объекта таймер
+    timer->start(1000); // вызов метода start. В параметре метода передается значение интервала запуска в миллисекундах. 
+    
+    connect(ui->pushButton, SIGNAL(clicked(bool)),this,  SLOT(inc()) ); // вызов слота inc() по событию нажатия кнопки
+    connect(timer, SIGNAL(timeout()),this,  SLOT(inc()) ); //соединяем срабатываение слота inc() по окончании 1000мс(1 секунда)
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::inc()
+{
+    n++;
+    ui->lcdNumber->display(n);
+}
+
+```
+Можно заметить, что один слот может принимать множество сигналов. Аналогично и отправитель сигнала может испускать несколько сигналов и соединяться со многими слотами. Результат работы программы можно посмотреть скачав папку example2.
