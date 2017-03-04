@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 ```
-## Работа с таймером
+## Работа с таймером и кнопкой
 Чтобы работать с таймером в QT необходимо подключить заголовочный файл QTimer (#include <QTimer>).
 
 ### Файл mainwindow.h
