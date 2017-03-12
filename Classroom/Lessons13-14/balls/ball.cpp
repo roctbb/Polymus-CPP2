@@ -22,11 +22,11 @@ int Ball::GetY()
 }
 void Ball::ReverseX()
 {
-    x *= -1;
+    vx *= -1;
 }
 void Ball::ReverseY()
 {
-    y *= -1;
+    vy *= -1;
 }
 void Ball::Move()
 {
