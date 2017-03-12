@@ -6,9 +6,9 @@ Ball::Ball(int width, int height, QObject *parent) :
     x = rand()%width;
     y = rand()%height;
 
-    vx = rand()%10;
-    vy = rand()%10;
-    r = 5 + rand()%10;
+    vx = 5+rand()%10;
+    vy = 5+rand()%10;
+    r = 5 + rand()%20;
     if (rand()%2==0) vx*=-1;
     if (rand()%2==0) vy*=-1;
 }

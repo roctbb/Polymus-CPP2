@@ -7,7 +7,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    Vasya = new Ball(this->size().width(), this->size().height());
+    for (int i = 0; i<N; i++)
+    {
+        balls[i] = new Ball(this->size().width(), this->size().height());
+    }
     timer.setInterval(50);
     connect(&timer, SIGNAL(timeout()),
             this, SLOT(moveBalls()));
@@ -16,17 +19,35 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-    delete Vasya;
+    for (int i = 0; i<N; i++)
+    {
+        delete balls[i];
+    }
     delete ui;
 }
 
 void MainWindow::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
-    Vasya->Draw(painter);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::HighQualityAntialiasing);
+    for (int i = 0; i<N; i++)
+    {
+        balls[i]->Draw(painter);
+    }
 }
 
 void MainWindow::moveBalls() {
-    Vasya->Move();
+    for (int i = 0; i<N; i++)
+    {
+        if (balls[i]->GetX()>size().width() ||
+                balls[i]->GetX()<0)
+            balls[i]->ReverseX();
+        if (balls[i]->GetY()>size().width() ||
+                balls[i]->GetY()<0)
+            balls[i]->ReverseY();
+        balls[i]->Move();
+    }
+
     this->repaint();
 }

@@ -7,12 +7,12 @@
 namespace Ui {
 class MainWindow;
 }
-
+const int N = 30;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-    Ball * Vasya;
+    Ball * balls[N];
     QTimer timer;
 
 public:
