@@ -1,0 +1,13 @@
+INPUT(
+./release/main.o
+./release/mainwindow.o
+./release/figure.o
+./release/triangle.o
+./release/polygon.o
+./release/circle.o
+./release/moc_mainwindow.o
+./release/moc_figure.o
+./release/moc_triangle.o
+./release/moc_polygon.o
+./release/moc_circle.o
+);

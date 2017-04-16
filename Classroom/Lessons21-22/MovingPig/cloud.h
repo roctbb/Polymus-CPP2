@@ -15,8 +15,7 @@ protected:
     MainWindow *parentWindow;
 public:
     void start();
-
-public:
+    int getY();
     explicit Cloud(MainWindow *parent = 0);
 protected:
     void paintEvent(QPaintEvent *event);

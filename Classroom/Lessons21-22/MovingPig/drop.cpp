@@ -4,7 +4,7 @@ Drop::Drop(int x, MainWindow * parent) : Cloud(parent)
 {
 
     setGeometry(x, 0, 50,50);
-    this->setPixmap(QPixmap("/Users/roctbb/Downloads/face.png").scaled(this->width(),this->height(),Qt::KeepAspectRatioByExpanding));
+    this->setPixmap(QPixmap("c://Users//..path..//drop.jpg").scaled(this->width(),this->height(),Qt::KeepAspectRatioByExpanding));
 }
 
 void Drop::start()

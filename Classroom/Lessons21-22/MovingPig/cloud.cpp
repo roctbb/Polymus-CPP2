@@ -13,7 +13,7 @@ Cloud::Cloud(MainWindow *parent) : QLabel((QWidget*)parent)
 {
     int mx = rand()%parent->width();
     this->setGeometry(mx, 0, 150,150);
-    this->setPixmap(QPixmap("/Users/roctbb/Downloads/face.png"));
+    this->setPixmap(QPixmap("c:\\users\\..path..\\cloud.jpg"));
     parentWindow = parent;
     timer = new QTimer();
 }
@@ -32,4 +32,9 @@ void Cloud::moveMe()
     setGeometry(this->x()+speed, 0, 150,150);
     this->parentWindow->addDrop(this->x());
     this->repaint();
+}
+
+int Cloud::getY()
+{
+    return this->y();
 }

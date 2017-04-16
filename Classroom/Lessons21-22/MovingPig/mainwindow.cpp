@@ -9,6 +9,9 @@ MainWindow::MainWindow(QWidget *parent) :
     bg = new QLabel(this);
     Yoba = new Cloud(this);
     this->Yoba->start();
+    timer.setInterval(10);
+    timer.start();
+    connect(&timer, SIGNAL(timeout()), this, SLOT(deleteDrop()));
 
 
 }
@@ -21,6 +24,18 @@ void MainWindow::addDrop(int x)
     drops.push_back(newDrop);
 }
 
+void MainWindow::deleteDrop()
+{
+    for (QList<Drop*>::iterator iter = drops.begin(); iter != drops.end(); ++iter)
+    {
+        if((*iter)->getY() >= this->height() - 100)
+        {
+            delete *iter;
+            drops.erase(iter);
+        }
+    }
+}
+
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -29,5 +44,5 @@ MainWindow::~MainWindow()
 void MainWindow::paintEvent(QPaintEvent *event)
 {
     bg->setGeometry(0,0,this->width(), this->height());
-    bg->setPixmap(QPixmap("/Users/roctbb/Downloads/windows-xp.jpg").scaled(this->width(),this->height(),Qt::KeepAspectRatioByExpanding));
+    bg->setPixmap(QPixmap("c:\\Users\\..path..\\backgnd.png").scaled(this->width(),this->height(),Qt::KeepAspectRatioByExpanding));
 }
