@@ -1,3 +1,21 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cstdlib>
+
+using namespace std;
+
+class Names {
+public:
+    static string getName() {
+        string names[29] = {"Abby", "Angel", "Annie", "Baby", "Bailey", "Bandit", "Bear", "Bella", "Bob", "Boo",
+                            "Boots", "Bubba", "Buddy", "Buster", "Cali", "Callie", "Casper", "Charlie",
+                            "Chester", "Chloe", "Cleo", "Coco", "Cookie", "Cuddles", "Daisy", "Dusty", "Felix",
+                            "Fluffy", "Garfield"};
+        return names[rand() % 29];
+    }
+};
+
 class Animal {
 private:
 	string name; //имя
@@ -7,10 +25,7 @@ private:
 	int last_action; // время(!) последнего действия
 public:
 	Animal() {
-		string names[] = { /*задать свой массив имен*/};
-		name = names[rand() % /*размер names*/];
-		//задать health, happiness, food случайно (rand()), но не меньше 50
-		last_action = /*your code*/;
+		/*your code*/;
 	}
 	~Animal() {}
 
